@@ -1,11 +1,19 @@
 'use strict'
 
 const router = require('express').Router()
-module.exports = router
+const Candy = require('../db/models/Candy')
 
-// Your routes go here!
+module.exports = router;
 
-router.use('/candies', require('./candies'));
+router.get('/', async (req, res, next) => {
+  try {
+    const candies = await Candy.findAll();
+    res.json(candies);
+  } catch (err) {
+    next(err);
+  }
+});
+
 
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
 // You can put all routes in this file HOWEVER,

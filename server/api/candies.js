@@ -6,7 +6,7 @@ module.exports = router;
 router.get('/', async (req, res, next) => {
   try {
     const candies = await Candy.findAll();
-    res.json(messages);
+    res.json(candies);
   } catch (err) {
     next(err);
   }
