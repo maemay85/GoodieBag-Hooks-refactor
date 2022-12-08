@@ -1,7 +1,7 @@
-const router = require('express').Router();
-const { Candy } = require('../db/models')
+const router = require('express').Router()
+const Candy = require('../db/models/Candy')
 
-module.exports = router;
+
 
 router.get('/', async (req, res, next) => {
   try {
@@ -11,3 +11,5 @@ router.get('/', async (req, res, next) => {
     next(err);
   }
 });
+
+module.exports = router;

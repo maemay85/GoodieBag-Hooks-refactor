@@ -1,18 +1,11 @@
 'use strict'
 
-const router = require('express').Router()
-const Candy = require('../db/models/Candy')
+const router = require('express').Router();
+const candyRouter = require('./candies');
 
-module.exports = router;
 
-router.get('/', async (req, res, next) => {
-  try {
-    const candies = await Candy.findAll();
-    res.json(candies);
-  } catch (err) {
-    next(err);
-  }
-});
+
+router.use('/candies', candyRouter);
 
 
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
@@ -39,4 +32,4 @@ router.use((req, res, next) => {
   next(err)
 })
 
-
+module.exports = router;

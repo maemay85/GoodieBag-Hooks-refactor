@@ -12,7 +12,7 @@ module.exports = db.define('candy', {
   },
 
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
     validate: {
       notEmpty: true,
@@ -29,7 +29,7 @@ module.exports = db.define('candy', {
   },
 
   imageUrl: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     defaultValue: 'https://kado.de/images/shop/product/noa-tritlar-150g-tuete-1850.jpg',
   },
 

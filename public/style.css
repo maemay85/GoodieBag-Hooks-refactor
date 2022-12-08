@@ -29,6 +29,10 @@ nav {
   padding: 10px;
 }
 
+a {
+  color: white;
+}
+
 main {
   align-items: center;
   display: flex;
