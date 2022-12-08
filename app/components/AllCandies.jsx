@@ -13,8 +13,14 @@ const AllCandies = () => {
 
   return (
     <div>
-      <ul className=""></ul>
+      <ul className="candy-list">
+        {candies.map((candy) => (
+          <li candy={candy} key={candy.id}>{candy}</li>
+        ))}
+      </ul>
     </div>
   )
 
 }
+
+export default AllCandies

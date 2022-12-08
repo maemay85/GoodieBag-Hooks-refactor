@@ -1,6 +1,7 @@
 'use strict'
 
 const router = require('express').Router()
+module.exports = router
 
 // Your routes go here!
 
@@ -30,4 +31,4 @@ router.use((req, res, next) => {
   next(err)
 })
 
-module.exports = router
+
